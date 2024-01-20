@@ -5,8 +5,8 @@ type ResponseData = {
 }
  
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === '') {
-        
+    if (req.method === 'GET') {
+        res.status(200).json({ message: 'GET REQUEST' })
     }
     else if (req.method === 'POST') {
         res.status(200).json({ message: 'Hello from Next.js!' })
