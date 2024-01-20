@@ -24,7 +24,7 @@ export default function CalendarPage() {
             right: 'custom1,custom2'
           }}
           customButtons={{
-            custom1: {
+            custom1: { 
                 text: 'custom 1',
                 click: () => {
                   alert('clicked custom button 1!');
