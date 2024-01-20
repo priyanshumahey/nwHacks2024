@@ -18,6 +18,31 @@ export default function CalendarPage() {
             center: 'title',
             right: 'dayGridMonth,dayGridDay,timeGridWeek',
           }}
+          footerToolbar={{
+            left: 'custom1,custom2',
+            center: 'addEvent',
+            right: 'custom1,custom2'
+          }}
+          customButtons={{
+            custom1: {
+                text: 'custom 1',
+                click: () => {
+                  alert('clicked custom button 1!');
+                }
+              },
+              custom2: {
+                text: 'custom 2',
+                click: () => {
+                  alert('clicked custom button 2!');
+                }
+              },
+              addEvent: {
+                text: 'add event',
+                click: () => {
+                    alert('added new event!');
+                }
+              }
+          }}
           initialView='dayGridMonth'
           nowIndicator={true}
           editable={true}
