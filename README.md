@@ -8,3 +8,6 @@ We built our solution using a combination of React for the front end, leveraging
 A major challenge we ran into, we had to unify multiple data streams for all the APIs to work seamlessly together.
 
 We will continue thinking through what the future of calendars looks like.
+<img width="534" alt="Screen Shot 2024-01-21 at 11 57 50 AM" src="https://github.com/priyanshumahey/nwHacks2024/assets/90292255/2c63d3d8-23e1-406a-9d9c-c75fa6fe6fbb">
+
+
