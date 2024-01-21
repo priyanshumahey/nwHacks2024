@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import React, {useState} from 'react'
+import React, {useState, useMemo, useEffect} from 'react'
 import Popup from 'reactjs-popup';
 import 'bulma/css/bulma.min.css';
 import Box from '@mui/material/Box';
@@ -14,13 +14,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import styles from './styles.module.css';
 import Button from '@mui/material/Button';
-import {calendarAdd} from './calendarController';
+import {calendarAdd, calendarGet} from './calendarController';
 
 export default function CalendarPage() {
 
   //modal popup and events
     const [modal, setModal] = useState(false);
-    const [events, setEvents] = useState([{title: 'nice event', description: '', location: 'Vancouver', start: new Date(), end: new Date(), creatorId: 1, inviteList: 0}]);
+    const [events, setEvents] = useState<{title: string, description: string | null, location: string| null, start: Date, end: Date, creatorId: number | null, inviteList: number | null}[]>([]);
     const [popupOpen, setPopupOpen] = useState(false);
 
     //form fields
@@ -31,15 +31,52 @@ export default function CalendarPage() {
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [inviteList, setInviteList] = useState<number>(0);
 
-    const addEvent = () => {
-        console.log('hello');
-        if (typeof(endDate) != null && typeof(startDate) != null) {
-          setEvents([...events, {title: title, description: description, location: location, start: startDate, end: endDate, creatorId: 0, inviteList: inviteList}])
-          calendarAdd({id: (new Date().getTime()), title: title, description: description, location: location,
-            startTime: startDate.toString(), endTime: endDate.toString(), creatorId: 0, inviteList: inviteList});
+    const getEvent = async () => {
+      try {
+        setEvents([]); // Reset events array
+        let results = await calendarGet();
+    
+        if (results) {
+          let updatedEvents = [];
+    
+          for (let i = 0; i < results.length; i++) {
+            if (results[i].startTime != null && results[i].endTime != null) {
+              let formattedStartDate = new Date(Date.parse(results[i].startTime || '0'));
+              let formattedEndDate = new Date(Date.parse(results[i].endTime || '0'));
+    
+              updatedEvents.push({
+                title: results[i].title || '',
+                description: results[i].description,
+                location: results[i].location,
+                start: formattedStartDate,
+                end: formattedEndDate,
+                creatorId: results[i].creatorId,
+                inviteList: results[i].inviteList
+              });
+            }
+          }
+    
+          setEvents(updatedEvents); // Set events after the loop
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    const addEvent = async() => {
+        if (endDate != null && startDate != null) {
+          try {
+            await calendarAdd({id: (new Date().getTime()), title: title, description: description, location: location,
+              startTime: startDate.toString(), endTime: endDate.toString(), creatorId: 0, inviteList: inviteList});
+            getEvent();
+            closeModal();
+          }
+          catch (error) {
+            alert(error);
+          }
         }
         else {
-          console.log('please specify date');
+          alert('please specify date');
         }
     }
 
@@ -51,8 +88,10 @@ export default function CalendarPage() {
       setPopupOpen(false);
   };
 
-    //styles for modal
-    const style = { background: 'rgba(142 79 79 1)' };
+  //code for loading events
+  useEffect(() => {
+    getEvent();
+  }, []);
 
   return (
       <div className='calendar-container'>
