@@ -2,7 +2,7 @@ import {Event} from '../../types/Event'
 
 export const calendarAdd = async(event : Event) => {
     try {
-        const res = await fetch('http://localhost:3000/api/db', {
+        const res = await fetch('http://localhost:4040/api/db', {
             method: 'POST',
             body: JSON.stringify(event),
             headers: {
@@ -21,7 +21,7 @@ export const calendarAdd = async(event : Event) => {
 export const calendarGet = async() => {
     let eventList : Event[] = []
     try {
-        const res = await fetch('http://localhost:3000/api/db', {
+        const res = await fetch('http://localhost:4040/api/db', {
             method: 'GET'
         });
         const data = await res.json();
