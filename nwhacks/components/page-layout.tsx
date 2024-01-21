@@ -2,7 +2,6 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import React from "react";
 import { NavBar } from "./navigation/desktop/nav-bar";
 import { MobileNavBar } from "./navigation/mobile/mobile-nav-bar";
-import { PageFooter } from "./page-footer";
 import { PageLoader } from "./page-loader";
 
 interface PageLayoutProps {
@@ -25,7 +24,6 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
       <NavBar />
       <MobileNavBar />
       <div className="page-layout__content">{children}</div>
-      <PageFooter />
     </div>
   );
 };
