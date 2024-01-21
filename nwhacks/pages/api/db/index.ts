@@ -29,6 +29,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     else if (req.method === 'POST') {
         //create one event
+        /*
+        {
+            "id": 24,
+            "title": "b",
+            "description": "bb",
+            "location": "c",
+            "startTime": "2024-01-20 20:00:00",
+            "endTime": "2024-01-20 21:00:00",
+            "creatorId": 1,
+            "inviteList": 0
+        }
+        */
         const eventDetails = req.body;
         console.log(event);
         
