@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 startTime: event.startTime,
                 endTime: event.endTime,
                 creatorId: event.creatorId,
-                inviteList: event.inviteList
+                type: event.type
             }).from(event)
             res.status(200).json({data: results})
         }
@@ -38,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             "startTime": "2024-01-20 20:00:00",
             "endTime": "2024-01-20 21:00:00",
             "creatorId": 1,
-            "inviteList": 0,
             "type": "meeting" // "task" or "remainder"
         }
         */
@@ -55,7 +54,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     startTime: eventDetails.startTime,
                     endTime: eventDetails.endTime,
                     creatorId: eventDetails.creatorId,
-                    inviteList: eventDetails.inviteList,
                     type: eventDetails.type
                 });
             }
@@ -70,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(200).json({ message: `Successfully inserted into database values id: ${event.id}
                                         title: ${event.title} description: ${event.description} location: ${event.location},
                                         startTime: ${event.startTime} endTime: ${event.endTime} creatorId: ${event.creatorId},
-                                        inviteList: ${event.inviteList}` });
+` });
     } else {
         res.status(400).json({ message: 'Not found!' });
     }

@@ -13,6 +13,8 @@ export const NavBarTabs: React.FC = () => {
         <>
           <NavBarTab path="/protected" label="Protected" />
           <NavBarTab path="/admin" label="Admin" />
+          <NavBarTab path="/createEvent" label="Create Event"/>
+          <NavBarTab path="/calendar" label="Calendar"/>
         </>
       )}
     </div>

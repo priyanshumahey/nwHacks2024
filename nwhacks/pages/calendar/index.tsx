@@ -15,6 +15,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import styles from './styles.module.css';
 import Button from '@mui/material/Button';
 import {calendarAdd} from './calendarController';
+import { NextPage } from "next";
+import { PageLayout } from "../../components/page-layout";
 
 export default function CalendarPage() {
 
@@ -55,6 +57,7 @@ export default function CalendarPage() {
     const style = { background: 'rgba(142 79 79 1)' };
 
   return (
+    <PageLayout>
       <div className='calendar-container'>
         <FullCalendar
           plugins={[
@@ -170,5 +173,6 @@ export default function CalendarPage() {
                 </div>
             </Popup>;
       </div>
+      </PageLayout>
   )
 }

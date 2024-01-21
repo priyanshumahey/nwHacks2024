@@ -6,5 +6,5 @@ export interface Event {
     startTime: string | null;
     endTime: string | null;
     creatorId: number | null;
-    inviteList: number | null;
+    type: string | null;
 }
