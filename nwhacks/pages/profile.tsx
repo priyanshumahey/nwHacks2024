@@ -1,13 +1,21 @@
+import React, { useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { NextPage } from "next";
 import Image from "next/image";
-import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
 
 const Profile: NextPage = () => {
-  const defaultPicture = "https://cdn.auth0.com/blog/hello-auth0/auth0-user.png";
+  const defaultPicture =
+    "https://cdn.auth0.com/blog/hello-auth0/auth0-user.png";
   const { user } = useUser();
+
+  useEffect(() => {
+    if (user?.sub) {
+      const userId = user.sub.split("|")[1];
+      console.log("User ID:", userId);
+    }
+  }, [user]);
 
   if (!user) {
     return null;
