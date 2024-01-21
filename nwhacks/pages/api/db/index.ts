@@ -38,7 +38,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             "startTime": "2024-01-20 20:00:00",
             "endTime": "2024-01-20 21:00:00",
             "creatorId": 1,
-            "inviteList": 0
+            "inviteList": 0,
+            "type": "meeting" // "task" or "remainder"
         }
         */
         const eventDetails = req.body;
@@ -54,7 +55,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     startTime: eventDetails.startTime,
                     endTime: eventDetails.endTime,
                     creatorId: eventDetails.creatorId,
-                    inviteList: eventDetails.inviteList
+                    inviteList: eventDetails.inviteList,
+                    type: eventDetails.type
                 });
             }
             else {
