@@ -35,6 +35,16 @@ export const MobileNavBarTabs: React.FC<MobileNavBarTabsProps> = ({
             label="Admin"
             handleClick={handleClick}
           />
+          <MobileNavBarTab
+            path="/createEvent"
+            label="Create Event"
+            handleClick={handleClick}
+          />
+          <MobileNavBarTab
+            path="/calendar"
+            label="Calendar"
+            handleClick={handleClick}
+          />
         </>
       )}
     </div>

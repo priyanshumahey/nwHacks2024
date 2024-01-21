@@ -20,6 +20,5 @@ export const event = mysqlTable('event', {
   startTime: text('start_time'),
   endTime: text('end_time'),
   creatorId: int('creator_id'),
-  inviteList: int('invite_list'),//.references(() => inviteList.id)
   type: text('type'),
 });
