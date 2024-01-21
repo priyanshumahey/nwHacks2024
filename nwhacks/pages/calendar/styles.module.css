@@ -21,3 +21,14 @@
   .title {
     margin-top: 10px;
   }
+
+  .main_div {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-width: 400px !important;
+  }
+
+  /* .fc-toolbar-title {
+    color: 'red';
+  } */
