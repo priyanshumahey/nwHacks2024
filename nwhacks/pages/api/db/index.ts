@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 creatorId: event.creatorId,
                 inviteList: event.inviteList
             }).from(event)
-            return results;
+            res.status(200).json({data: results})
         }
         catch (error) {
             console.error(error);
