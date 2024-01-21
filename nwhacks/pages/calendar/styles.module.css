@@ -29,6 +29,526 @@
     min-width: 400px !important;
   }
 
-  /* .fc-toolbar-title {
-    color: 'red';
-  } */
+  .calendarPageLayout {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .calendar {
+    flex:1;
+  }
+
+  .leftMenu {
+    background-color: var(--gray-900);
+    height: 900px;
+    position: relative;
+    width: 300px;
+  }
+  
+  .leftMenu .top {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    left: 16px;
+    position: absolute;
+    top: 16px;
+    width: 268px;
+  }
+  
+  .leftMenu .dots {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 8px;
+    position: relative;
+  }
+  
+  .leftMenu .ellipse {
+    background-color: #ed6b60;
+    border: 1px solid;
+    border-color: #d05147;
+    border-radius: 6px;
+    height: 12px;
+    position: relative;
+    width: 12px;
+  }
+  
+  .leftMenu .div {
+    background-color: #f5c250;
+    border: 1px solid;
+    border-color: #d6a343;
+    border-radius: 6px;
+    height: 12px;
+    position: relative;
+    width: 12px;
+  }
+  
+  .leftMenu .ellipse2 {
+    background-color: #62c656;
+    border: 1px solid;
+    border-color: #52a842;
+    border-radius: 6px;
+    height: 12px;
+    position: relative;
+    width: 12px;
+  }
+  
+  .leftMenu .textwrapper4 {
+    color: #8a8a8a;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 84px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper5 {
+    color: #8a8a8a;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 125px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper6 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 166px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper7 {
+    color: #8a8a8a;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 207px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper8 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 248px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper9 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 289px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper10 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 330px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper11 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 371px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper12 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 412px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper13 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 453px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .textwrapper14 {
+    color: #404040;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 494px;
+    white-space: nowrap;
+  }
+  
+  .leftMenu .visibility {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 97px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibility4 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 138px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibility1 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 179px;
+    width: 20px;
+  }
+
+  .leftMenu .visibility2 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 220px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibility3 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 261px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 302px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff2 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 343px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff3 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 384px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff4 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 425px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff5 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 466px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff6 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 507px;
+    width: 20px;
+  }
+  
+  .leftMenu .visibilityoff7 {
+    height: 20px;
+    left: 248px;
+    position: absolute;
+    top: 177px;
+    width: 20px;
+  }
+  
+  .leftMenu .language {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 96px;
+    width: 18px;
+  }
+  
+  .leftMenu .mail {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 137px;
+    width: 18px;
+  }
+  
+  .leftMenu .assistantNavigation {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 178px;
+    width: 18px;
+  }
+  
+  .leftMenu .attachMoney {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 219px;
+    width: 18px;
+  }
+  
+  .leftMenu .barcode {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 260px;
+    width: 18px;
+  }
+  
+  .leftMenu .clearNight {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 301px;
+    width: 18px;
+  }
+  
+  .leftMenu .crop {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 342px;
+    width: 18px;
+  }
+  
+  .leftMenu .mindfulness {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 383px;
+    width: 18px;
+  }
+  
+  .leftMenu .musicNote {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 424px;
+    width: 18px;
+  }
+  
+  .leftMenu .mms {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 465px;
+    width: 18px;
+  }
+  
+  .leftMenu .formatListBulleted {
+    height: 18px;
+    left: 22px;
+    position: absolute;
+    top: 506px;
+    width: 18px;
+  }
+  
+  .leftMenu .rectangle {
+    background-color: #373737;
+    border-radius: 6px;
+    height: 32px;
+    left: 22px;
+    position: absolute;
+    top: 547px;
+    width: 244px;
+  }
+  
+  .leftMenu .rectangle2 {
+    background-color: #f0ff9a;
+    border-radius: 4px;
+    height: 13px;
+    left: 182px;
+    position: absolute;
+    top: 99px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle3 {
+    background-color: #6bb8ff;
+    border-radius: 4px;
+    height: 13px;
+    left: 100px;
+    position: absolute;
+    top: 140px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle4 {
+    background-color: #ff3636;
+    border-radius: 4px;
+    height: 13px;
+    left: 125px;
+    position: absolute;
+    top: 181px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle5 {
+    background-color: #ffd500;
+    border-radius: 4px;
+    height: 13px;
+    left: 98px;
+    position: absolute;
+    top: 222px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle6 {
+    background-color: #07a104;
+    border-radius: 4px;
+    height: 13px;
+    left: 132px;
+    position: absolute;
+    top: 263px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle7 {
+    background-color: #a13d04;
+    border-radius: 4px;
+    height: 13px;
+    left: 124px;
+    position: absolute;
+    top: 304px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle8 {
+    background-color: #0f25e8;
+    border-radius: 4px;
+    height: 13px;
+    left: 113px;
+    position: absolute;
+    top: 345px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle9 {
+    background-color: #a10475;
+    border-radius: 4px;
+    height: 13px;
+    left: 105px;
+    position: absolute;
+    top: 386px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle10 {
+    background-color: #6504a1;
+    border-radius: 4px;
+    height: 13px;
+    left: 105px;
+    position: absolute;
+    top: 427px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle11 {
+    background-color: #044ca1;
+    border-radius: 4px;
+    height: 13px;
+    left: 157px;
+    position: absolute;
+    top: 468px;
+    width: 13px;
+  }
+  
+  .leftMenu .rectangle12 {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    height: 13px;
+    left: 105px;
+    position: absolute;
+    top: 509px;
+    width: 13px;
+  }
+  

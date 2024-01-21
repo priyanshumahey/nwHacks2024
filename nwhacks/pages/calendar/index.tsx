@@ -1,5 +1,6 @@
 'use client'
-import CalendarComponent from './calendar'
+import CalendarComponent from './calendar';
+import {LeftMenu} from './LeftMenu';
 import { NextPage } from "next";
 import { PageLayout } from "../../components/page-layout";
 import styles from './styles.module.css';
@@ -11,7 +12,12 @@ export default function CalendarPage() {
     <PageLayout>
       <div className={styles.main_div}>
         <Typography variant="h1" color="red">Calendar</Typography>
-        <CalendarComponent/>
+        <div className={styles.calendarPageLayout}>
+        <LeftMenu />
+        <div className={styles.calendar}>
+          <CalendarComponent/>
+        </div>
+        </div>
       </div>
     </PageLayout>
   )
