@@ -18,14 +18,22 @@ export const calendarAdd = async(event : Event) => {
     return true;
 }
 
-export const calendarGet = async() => {
+export const calendarGet = async(filters : string[]) => {
     let eventList : Event[] = []
     try {
-        const res = await fetch('http://localhost:4040/api/db', {
-            method: 'GET'
-        });
-        const data = await res.json();
-        eventList = data.data;
+        if (filters) {
+            for (let i = 0; i < filters.length; i++) {
+                let arr = []
+                const res = await fetch(`http://localhost:4040/api/db?filters=${filters[i]}`, {
+                    method: 'GET'
+                });
+                const data = await res.json();
+                arr = data.data;
+                for (let j = 0; j < arr.length; j++) {
+                    eventList.push(arr[j])
+                }
+            }
+        }
     }
     catch (error) {
         console.error(error);

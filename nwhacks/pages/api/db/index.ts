@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import {db} from '../../../lib/db/index'
 import {event} from '../../../lib/db/schema'
 import {Event} from '../../../types/Event'
+import { eq} from 'drizzle-orm';
+
 type ResponseData = {
     message: string
 }
@@ -9,6 +11,7 @@ type ResponseData = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {
         //get all events
+        const filters = req.query.filters;
         try {
             const results: Event[] = await db.select({
                 id: event.id,
@@ -19,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 endTime: event.endTime,
                 creatorId: event.creatorId,
                 type: event.type
-            }).from(event)
+            }).from(event).where(eq(event.type, filters))
             res.status(200).json({data: results})
         }
         catch (error) {
