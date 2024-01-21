@@ -7,8 +7,8 @@ import React, {useState} from 'react'
 
 export default function CalendarPage() {
 
-    const [events, setEvents] = useState([{title: 'nice event', start: new Date(), resourceId: 'a'}])
-    const addEvent = (event : {title: string, start: Date, resourceId: string}) => {
+    const [events, setEvents] = useState([{title: 'nice event', description: '', location: 'Vancouver', start: new Date(), end: new Date(), creatorId: 'a', inviteList: ''}])
+    const addEvent = (event : {title: string, description: string, location:string, start: Date, end: Date, creatorId: string, inviteList: string}) => {
         setEvents([...events, event])
     }
   return (
@@ -46,10 +46,12 @@ export default function CalendarPage() {
                 text: 'add event',
                 click: () => {
                     let dateStr = prompt('Enter a date in YYYY-MM-DD format');
-                    let date = new Date(dateStr + 'T00:00:00'); // will be in local time
+                    let startDate = new Date(dateStr + 'T00:00:00'); // will be in local time
+                    let endDate = new Date(startDate);
+                    endDate.setDate(endDate.getTime() + 3600);
 
-                if (!isNaN(date.valueOf())) { // valid?
-                    addEvent({title: 'some random event', start: date, resourceId: 'a'})
+                if (!isNaN(startDate.valueOf())) { // valid?
+                    addEvent({title: 'some random event', description: '', location: 'Vancouver', start: startDate, end: endDate, creatorId: 'a', inviteList: ''})
                     alert('Great. Now, update your database...');
                 } else {
                     alert('Invalid date.');
@@ -62,11 +64,6 @@ export default function CalendarPage() {
           editable={true}
           selectable={true}
           selectMirror={true}
-          resources={[
-            { id: 'a', title: 'Auditorium A' },
-            { id: 'b', title: 'Auditorium B', eventColor: 'green' },
-            { id: 'c', title: 'Auditorium C', eventColor: 'orange' },
-          ]}
           events={events}
         />
       </div>
