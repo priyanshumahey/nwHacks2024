@@ -5,17 +5,18 @@ import { NextPage } from "next";
 import { PageLayout } from "../../components/page-layout";
 import styles from './styles.module.css';
 import Typography from '@mui/material/Typography';
+import React, {useState} from 'react';
 
 export default function CalendarPage() {
 
+  const [filters, setFilters] = useState([]);
   return (
     <PageLayout>
       <div className={styles.main_div}>
-        <Typography variant="h1" color="red">Calendar</Typography>
         <div className={styles.calendarPageLayout}>
-        <LeftMenu />
+        <LeftMenu func={setFilters}/>
         <div className={styles.calendar}>
-          <CalendarComponent/>
+          <CalendarComponent filters={filters}/>
         </div>
         </div>
       </div>

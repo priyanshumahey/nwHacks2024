@@ -16,8 +16,10 @@ import styles from './styles.module.css';
 import Button from '@mui/material/Button';
 import {calendarAdd, calendarGet} from './calendarController';
 
-export default function CalendarComponent() {
+export default function CalendarComponent(props: any) {
 
+    const filters : string[] = props.filters;
+    console.log(filters);
   //modal popup and events
     const [modal, setModal] = useState(false);
     const [events, setEvents] = useState<{title: string, description: string | null, location: string| null, start: Date, end: Date, creatorId: number | null, type: string | null}[]>([]);
@@ -31,10 +33,10 @@ export default function CalendarComponent() {
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [type, setType] = useState<string>('');
 
-    const getEvent = async () => {
+    const getEvent = async (filters : string[]) => {
       try {
         setEvents([]); // Reset events array
-        let results = await calendarGet();
+        let results = await calendarGet(filters);
     
         if (results) {
           let updatedEvents = [];
@@ -68,7 +70,7 @@ export default function CalendarComponent() {
           try {
             await calendarAdd({id: (new Date().getTime()), title: title, description: description, location: location,
               startTime: startDate.toString(), endTime: endDate.toString(), creatorId: 0, type: type});
-            getEvent();
+            getEvent(filters);
             closeModal();
           }
           catch (error) {
@@ -90,8 +92,8 @@ export default function CalendarComponent() {
 
   //code for loading events
   useEffect(() => {
-    getEvent();
-  }, []);
+    getEvent(filters);
+  }, [filters]);
 
   return (
       <div className='calendar-container'>
