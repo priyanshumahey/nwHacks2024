@@ -1,4 +1,6 @@
 # NWHacks 2024
+<img width="534" alt="Screen Shot 2024-01-21 at 11 57 50 AM" src="https://github.com/priyanshumahey/nwHacks2024/assets/90292255/2c63d3d8-23e1-406a-9d9c-c75fa6fe6fbb">
+
 We have been hacking my calendar for over 3 years and using it as a surface to log thoughts, make to-do lists, and write insights about books we read or videos we watch in a certain time block. Calendars have the potential to be more.
 
 Our project transforms traditional calendars by infusing them with rich insights and predictive capabilities. Beyond basic scheduling, we're making calendars context-aware, turning them into dynamic tools for both information and foresight. This leap forward in calendar functionality promises to revolutionize personal and professional time management
@@ -8,6 +10,6 @@ We built our solution using a combination of React for the front end, leveraging
 A major challenge we ran into, we had to unify multiple data streams for all the APIs to work seamlessly together.
 
 We will continue thinking through what the future of calendars looks like.
-<img width="534" alt="Screen Shot 2024-01-21 at 11 57 50 AM" src="https://github.com/priyanshumahey/nwHacks2024/assets/90292255/2c63d3d8-23e1-406a-9d9c-c75fa6fe6fbb">
+
 
 
