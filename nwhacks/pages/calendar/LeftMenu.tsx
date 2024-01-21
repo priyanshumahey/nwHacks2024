@@ -1,7 +1,23 @@
 import React from "react";
 import styles from "./styles.module.css";
+import { IconButton } from '@mui/material';
 
 export const LeftMenu = () => {
+
+    //onclick handlers
+    const toggleVisibility = (value: number) => {
+        let el : HTMLImageElement | null = document.getElementById(value.toString());
+        if (el) {
+            const isVisible = el.src.endsWith("visibility.png");
+            if (isVisible) {
+                el.src = "visibility_off.png";
+            }
+            else {
+                el.src="visibility.png";
+            }
+        }
+    }
+
   return (
     <div className={styles.leftMenu}>
       <div className={`${styles.leftMenu} ${styles.top}`}>
@@ -22,17 +38,39 @@ export const LeftMenu = () => {
       <div className={`${styles.leftMenu} ${styles.textwrapper12}`}>Music</div>
       <div className={`${styles.leftMenu} ${styles.textwrapper13}`}>Social Media</div>
       <div className={`${styles.leftMenu} ${styles.textwrapper14}`}>Notes</div>
-      <img className={`${styles.leftMenu} ${styles.visibility}`} alt="Visibility" src="visibility.png" />
-      <img className={`${styles.leftMenu} ${styles.visibility4}`} alt="Visibility" src="visibility.png" />
-      <img className={`${styles.leftMenu} ${styles.visibility2}`} alt="Visibility" src="visibility.png" />
-      <img className={`${styles.leftMenu} ${styles.visibility3}`} alt="Visibility" src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff}`} src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff2}`}src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff3}`}src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff4}`}src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff5}`}src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff6}`}src="visibility_off.png" />
-      <img className={`${styles.leftMenu} ${styles.visibilityoff7}`}src="visibility_off.png" />
+      <IconButton sx={{width: '20px', left:'0px'}} onClick={() => toggleVisibility(1)}>
+        <img id='1' className={`${styles.leftMenu} ${styles.visibility}`} alt="Visibility" src="visibility.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-20px'}} onClick={() => toggleVisibility(2)}>
+      <img id='2' className={`${styles.leftMenu} ${styles.visibility4}`} alt="Visibility" src="visibility.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-40px'}} onClick={() => toggleVisibility(3)}>
+      <img id='3' className={`${styles.leftMenu} ${styles.visibility2}`} alt="Visibility" src="visibility.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-60px'}} onClick={() => toggleVisibility(4)}>
+      <img id='4' className={`${styles.leftMenu} ${styles.visibility3}`} alt="Visibility" src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-80px'}} onClick={() => toggleVisibility(5)}>
+      <img id='5' className={`${styles.leftMenu} ${styles.visibilityoff}`} src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-100px'}} onClick={() => toggleVisibility(6)}>
+      <img id='6' className={`${styles.leftMenu} ${styles.visibilityoff2}`}src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-120px'}} onClick={() => toggleVisibility(7)}>
+      <img id='7' className={`${styles.leftMenu} ${styles.visibilityoff3}`}src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-140px'}} onClick={() => toggleVisibility(8)}>
+      <img id='8' className={`${styles.leftMenu} ${styles.visibilityoff4}`}src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-160px'}} onClick={() => toggleVisibility(9)}>
+      <img id='9' className={`${styles.leftMenu} ${styles.visibilityoff5}`}src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-180px'}} onClick={() => toggleVisibility(10)}>
+      <img id='10' className={`${styles.leftMenu} ${styles.visibilityoff6}`}src="visibility_off.png" />
+      </IconButton>
+      <IconButton sx={{width: '20px', left:'-200px'}} onClick={() => toggleVisibility(11)}>
+      <img id='11' className={`${styles.leftMenu} ${styles.visibilityoff7}`}src="visibility_off.png" />
+      </IconButton>
       <img className={`${styles.leftMenu} ${styles.language}`} alt="Language" src="language.png" />
       <img className={`${styles.leftMenu} ${styles.mail}`} alt="Mail" src="mail.png" />
       <img className={`${styles.leftMenu} ${styles.assistantNavigation}`} alt="Assistant navigation" src="assistant_navigation.png" />
