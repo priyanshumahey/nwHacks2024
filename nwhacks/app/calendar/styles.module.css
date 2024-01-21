@@ -12,3 +12,12 @@
     padding-top: 3px;
     padding-bottom: 3px;
   }
+
+  .button {
+    margin-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .title {
+    margin-top: 10px;
+  }

@@ -107,10 +107,13 @@ export default function CalendarPage() {
                 nested
             >
                 <div className={styles.popup}>
-                    <Typography variant='h3'>Add new event</Typography>
+                  <div className={styles.title}>
+                    <Typography variant='h4'>Add new event</Typography>
+                    </div>
+                    <br></br>
                       <Box component='form' noValidate autoComplete='off'>
+                        <div className={styles.formfield}>
                         <TextField
-                        className={styles.formfield}
                           color="success"
                           label='title'
                           value={title}
@@ -118,6 +121,8 @@ export default function CalendarPage() {
                           return setTitle(e.target.value);
                           }}
                         />
+                        </div>
+                        <div className={styles.formfield}>
                         <TextField
                         className={styles.formfield}
                           color="success"
@@ -127,6 +132,8 @@ export default function CalendarPage() {
                           return setDescription(e.target.value);
                           }}
                         />
+                        </div>
+                        <div className={styles.formfield}>
                         <TextField
                         className={styles.formfield}
                           color="success"
@@ -136,10 +143,16 @@ export default function CalendarPage() {
                           return setLocation(e.target.value);
                           }}
                         />
+                        </div>
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <div className={styles.formfield}>
                         <DateTimePicker className={styles.formfield} label='start time' onChange={(date) => setStartDate(date)} value={startDate} />
+                        </div>
+                        <div className={styles.formfield}>
                         <DateTimePicker className={styles.formfield} label='end time' onChange={(date) => setEndDate(date)} value={endDate} />
+                        </div>
                       </LocalizationProvider>
+                      <div className={styles.formfield}>
                       <TextField
                       className={styles.formfield}
                           color="success"
@@ -149,7 +162,10 @@ export default function CalendarPage() {
                           return setInviteList(e.target.value);
                           }}
                         />
+                      </div>
+                      <div className={styles.button}>
                         <Button onClick={() => {addEvent()}} variant="contained">Submit</Button>
+                      </div>
                     </Box>
                 </div>
             </Popup>;
