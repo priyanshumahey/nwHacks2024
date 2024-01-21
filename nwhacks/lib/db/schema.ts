@@ -13,7 +13,7 @@ export const inviteList = mysqlTable('invite_list', {
 });
 
 export const event = mysqlTable('event', {
-  id: serial('id').primaryKey(),
+  id: serial('id').primaryKey().autoincrement(),
   title: text('title'),
   description: text('description'),
   location: text('location'),
