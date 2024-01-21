@@ -1,0 +1,14 @@
+.popup {
+    background: #d7d3d8;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border-width: 2px;
+    align-items: center;
+  }
+
+  .formfield {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
