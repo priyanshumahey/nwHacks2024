@@ -29,35 +29,34 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     else if (req.method === 'POST') {
         //create one event
-        const id: number = 304234;
-        const title: string = 'bruh';
-        const description: string = '';
-        const location: string = 'Vancouver';
-        const startTime: string = '2024-01-20 00:00:00';
-        const endTime: string = '2024-01-20 12:00:00';
-        const creatorId: number = 1;
-        const inviteList: number = 2;
+        const eventDetails = req.body;
+        console.log(event);
         
         try {
-            await db.insert(event).values({
-            id: id,
-            title: title,
-            description: description,
-            location: location,
-            startTime: startTime,
-            endTime: endTime,
-            creatorId: creatorId,
-            inviteList: inviteList
-        });
+            if (eventDetails.id != null) {
+                await db.insert(event).values({
+                    id: eventDetails.id,
+                    title: eventDetails.title,
+                    description: eventDetails.description,
+                    location: eventDetails.location,
+                    startTime: eventDetails.startTime,
+                    endTime: eventDetails.endTime,
+                    creatorId: eventDetails.creatorId,
+                    inviteList: eventDetails.inviteList
+                });
+            }
+            else {
+                throw Error('Event ID cannot be null!');
+            }
         }
         catch (error) {
             console.error(error);
             res.status(500).json({message: 'Error inserting into database!'});
         }
-        res.status(200).json({ message: `Successfully inserted into database values id: ${id}
-                                        title: ${title} description: ${description} location: ${location},
-                                        startTime: ${startTime} endTime: ${endTime} creatorId: ${creatorId},
-                                        inviteList: ${inviteList}` });
+        res.status(200).json({ message: `Successfully inserted into database values id: ${event.id}
+                                        title: ${event.title} description: ${event.description} location: ${event.location},
+                                        startTime: ${event.startTime} endTime: ${event.endTime} creatorId: ${event.creatorId},
+                                        inviteList: ${event.inviteList}` });
     } else {
         res.status(400).json({ message: 'Not found!' });
     }
