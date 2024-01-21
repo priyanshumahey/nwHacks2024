@@ -123,7 +123,7 @@
   }
   
   .leftMenu .textwrapper6 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -151,7 +151,7 @@
   }
   
   .leftMenu .textwrapper8 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -165,7 +165,7 @@
   }
   
   .leftMenu .textwrapper9 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -179,7 +179,7 @@
   }
   
   .leftMenu .textwrapper10 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -193,7 +193,7 @@
   }
   
   .leftMenu .textwrapper11 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -207,7 +207,7 @@
   }
   
   .leftMenu .textwrapper12 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -221,7 +221,7 @@
   }
   
   .leftMenu .textwrapper13 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -235,7 +235,7 @@
   }
   
   .leftMenu .textwrapper14 {
-    color: #404040;
+    color: #8a8a8a;
     font-family: "Inter-Medium", Helvetica;
     font-size: 16px;
     font-weight: 500;
@@ -258,7 +258,7 @@
   
   .leftMenu .visibility4 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 138px;
     width: 20px;
@@ -266,7 +266,7 @@
   
   .leftMenu .visibility1 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 179px;
     width: 20px;
@@ -274,7 +274,7 @@
 
   .leftMenu .visibility2 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 220px;
     width: 20px;
@@ -282,7 +282,7 @@
   
   .leftMenu .visibility3 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 261px;
     width: 20px;
@@ -290,7 +290,7 @@
   
   .leftMenu .visibilityoff {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 302px;
     width: 20px;
@@ -298,7 +298,7 @@
   
   .leftMenu .visibilityoff2 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 343px;
     width: 20px;
@@ -306,7 +306,7 @@
   
   .leftMenu .visibilityoff3 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 384px;
     width: 20px;
@@ -314,7 +314,7 @@
   
   .leftMenu .visibilityoff4 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 425px;
     width: 20px;
@@ -322,7 +322,7 @@
   
   .leftMenu .visibilityoff5 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 466px;
     width: 20px;
@@ -330,7 +330,7 @@
   
   .leftMenu .visibilityoff6 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 507px;
     width: 20px;
@@ -338,7 +338,7 @@
   
   .leftMenu .visibilityoff7 {
     height: 20px;
-    left: 248px;
+    left: 248px !important;
     position: absolute;
     top: 177px;
     width: 20px;
